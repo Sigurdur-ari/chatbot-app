@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useChat } from "./hooks/useChat";
-import ChatInput from "./components/ChatInput";
-import ChatWindow from "./components/ChatWindow";
+import ChatInput from "./components/ChatInput/ChatInput";
+import ChatWindow from "./components/ChatWindow/ChatWindow";
+
+import "./App.css";
 
 function App() {
   const [input, setInput] = useState("");
@@ -14,16 +16,13 @@ function App() {
   
 
   return (
-    <div 
-      style={{ 
-        padding: "20px", 
-        maxWidth: "700px", 
-        margin: "40px auto",
-        fontFamily: "Inter"
-      }}
-    >
-      <h1>Pricing and payment support bot 👾</h1>
-
+    <div className="app">
+      <div className="app-header">
+        <h1 className="app-title">Aðstoðarvélmennið</h1>
+        <p className="app-subtitle">
+          Spjallmenni sem getur svarað flestum spurningum!
+        </p>
+      </div>
       <ChatWindow messages={messages} loading={loading} />
 
       <ChatInput input={input} setInput={setInput} onSend={handleSend} />
