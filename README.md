@@ -1,5 +1,9 @@
 # AI Billing & Payment Support Chatbot
 
+## Deployment
+
+The project is deployed on Vercel and is accessible through this link: https://chatbot-app-ashen-mu.vercel.app/
+
 ## Overview
 
 This project is a lightweight AI-powered customer support chatbot prototype built to explore how conversational AI can improve customer experience in digital services.
