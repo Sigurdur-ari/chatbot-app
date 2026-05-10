@@ -75,3 +75,9 @@ The goal of the project was to better understand:
 This project is a prototype created for educational and experimental purposes only.
 
 It is not associated with any real company, customer data, billing system, or production environment. All interactions and scenarios are fictional and intended solely to demonstrate conversational AI behavior and support-oriented user experiences.
+
+---
+
+## Notes on model faults:
+
+Possible to bypass the scope of the model (payments and stuff) by asking leading questions. 
