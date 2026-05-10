@@ -1,31 +1,26 @@
-import OpenAI from "openai";
-import { chatbot_prompt } from "../lib/prompt";
 import type { Message } from "../types/chat";
-
-const client = new OpenAI(
-    {
-        apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-        dangerouslyAllowBrowser: true,
-    }
-);
 
 export async function sendChatMessage(messages: Message[]){
 
     console.log("Sending API request");
 
-    // Create a request to the OpenAI API with the system prompt and the user messages
-    const response = await client.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [
-            {
-                role: "system",
-                content: chatbot_prompt,
-            },
-            ...messages,
-        ],
-        // Add a low temperature to make the responses more focused. 
-        temperature: 0.2,
-    });
+    // Create a request to the OpenAI API through the api route with the system prompt and the user messages
+    const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json",
+    
+        }, 
+        body: JSON.stringify({
+            messages,
+        })
+    })
 
-    return response.choices[0].message.content || "No response";
+    if(!response.ok){
+        throw new Error("Failed to send API request");
+    }
+
+    const data = await response.json();
+
+    return data.response;
 }
