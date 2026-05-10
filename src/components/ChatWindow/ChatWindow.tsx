@@ -15,7 +15,7 @@ function ChatWindow({ messages, loading }: Props){
                 <MessageBubble key={index} message={message}/>
             ))}
 
-            {loading && <p style={{ color: "#fff" }}>Thinking...</p>}
+            {loading && <p style={{ color: "#fff" }}>Hinkraðu aðeins á meðan ég hugsa...</p>}
 
         </div>
     );

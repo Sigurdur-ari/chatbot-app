@@ -20,7 +20,7 @@ function App() {
       <div className="app-header">
         <h1 className="app-title">Aðstoðarvélmennið</h1>
         <p className="app-subtitle">
-          Spjallmenni sem getur svarað flestum spurningum!
+          Spjallmenni sem getur svarað flestum spurningum varðandi greiðslur og fjármál fyrirtækisins!
         </p>
       </div>
       <ChatWindow messages={messages} loading={loading} />
