@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { chatbot_prompt } from "../src/lib/prompt.ts";
+import { chatbot_prompt } from "./lib/prompt";
 
 const client = new OpenAI(
     {
